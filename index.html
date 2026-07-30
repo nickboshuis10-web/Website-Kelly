@@ -172,21 +172,34 @@
     font-weight:700;
     font-size:1.3rem;
   }
-  .route-line{
+  .route-map{
     flex:1;
     position:relative;
-    height:1px;
-    background:repeating-linear-gradient(to right, var(--ink-soft) 0 6px, transparent 6px 12px);
+    height:56px;
+    min-width:120px;
   }
-  .route-line::after{
-    content:'✈';
-    position:absolute;
-    top:-9px; left:50%;
-    transform:translateX(-50%);
-    font-size:0.85rem;
-    color:var(--teal);
-    background:var(--card);
-    padding:0 6px;
+  .route-map svg{
+    display:block;
+    width:100%;
+    height:100%;
+    overflow:visible;
+  }
+  .route-path{
+    fill:none;
+    stroke:var(--ink-soft);
+    stroke-width:1.4;
+    stroke-linecap:round;
+    stroke-dasharray:1 7;
+    animation:route-dash-flow 2.8s linear infinite;
+  }
+  .route-plane{
+    fill:var(--teal);
+  }
+  @keyframes route-dash-flow{
+    to{ stroke-dashoffset:-16; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .route-path{ animation:none; }
   }
   .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
   .btn{
@@ -536,13 +549,23 @@
         <p class="lede">Ik ben Kelly, en ik help je jouw droomreis waarmaken. Geen keuzestress, geen wachttijden — gewoon persoonlijk advies van iemand die zelf graag reist.</p>
 
         <div class="route-row">
-          <span class="route-city mono">WSTB</span>
-          <span class="route-line"></span>
-          <span class="route-city mono">?</span>
+          <span class="route-city mono">Van reiswens</span>
+          <span class="route-map">
+            <svg viewBox="0 0 600 90" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path id="flight-route" class="route-path" d="M4,64 C160,-10 440,-10 596,60"/>
+              <g class="route-plane">
+                <path d="M11,0 L3,-2 L3,-9 L0,-3 L-6,-2 L-6,-4 L-9,-1 L-9,1 L-6,4 L-6,2 L0,3 L3,9 L3,2 Z"/>
+                <animateMotion dur="13s" repeatCount="indefinite" rotate="auto">
+                  <mpath href="#flight-route"/>
+                </animateMotion>
+              </g>
+            </svg>
+          </span>
+          <span class="route-city mono">Jouw droomreis</span>
         </div>
 
         <div class="cta-row">
-          <a href="contact.html" class="btn btn-primary">Plan een gesprek</a>
+          <a href="contact.html#contact" class="btn btn-primary">Plan een gesprek</a>
           <a href="reisverhalen.html" class="btn btn-ghost">Lees mijn reisverhalen</a>
         </div>
       </div>
