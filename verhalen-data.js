@@ -15,6 +15,10 @@
   - excerpt: korte samenvatting, zichtbaar op de kaart in het overzicht
   - image:   pad naar een foto in de map images/verhalen/ (bv. "images/verhalen/griekenland.jpg")
              Laat leeg ("") als er nog geen foto is — dan verschijnt een gekleurd vlak i.p.v. een foto.
+             Dit is de hoofdfoto: die verschijnt op de kaart in het overzicht én bovenaan het verhaal.
+  - gallery: optioneel — lijst van extra foto's (paden zoals bij image). De hoofdfoto (image)
+             blijft bovenaan zichtbaar; klik erop (of op "Bekijk alle foto's") om de foto's uit
+             gallery in een lightbox te zien. Laat weg of gebruik een lege lijst [] voor geen galerij.
   - date:    optioneel, bv. "Juni 2025" — mag ook leeg blijven
   - content: het verhaal zelf, als lijst van alinea's (elke alinea = één regel tekst)
   - tips:    optioneel — lijst van korte praktische tips, verschijnt als apart lijstje
@@ -23,23 +27,30 @@
 
 const VERHALEN = [
   {
-    slug: 'griekenland-santorini',
-    region: 'Griekenland · Santorini',
-    stamp: 'SA',
-    title: 'Een pareltje op Santorini',
-    excerpt: "Santorini hoeft niet altijd druk te zijn — er zijn genoeg plekjes die je helemaal voor jezelf hebt als je weet wanneer je waar het beste heen kan gaan.",
-    image: '',
+    slug: 'griekenland-pyrgos',
+    region: 'Griekenland · Pyrgos, Santorini',
+    stamp: 'PY',
+    title: 'Pyrgos: het rustige pareltje van Santorini 💙',
+    excerpt: "Santorini staat bekend om witte huisjes, blauwe koepels en drukte. Toch is er een rustig bergdorp waar de tijd stil lijkt te staan: Pyrgos.",
+    image: 'images/verhalen/pyrgos-1.jpg',
+    gallery: [
+      'images/verhalen/pyrgos-2.jpg',
+      'images/verhalen/pyrgos-3.jpg',
+      'images/verhalen/pyrgos-4.jpg'
+    ],
     date: '',
     content: [
-      "Santorini hoeft (zeker buiten het hoogseizoen) niet altijd druk te zijn. Er zijn genoeg plekjes die je helemaal voor jezelf hebt als je weet wanneer je waar het beste heen kan gaan. Ik help je graag met het samenstellen van een reis naar dit prachtige unieke eiland.",
-      "Te leuk plaatsje waar je eindeloos kan dwalen door steegjes. Leuke souvenirwinkeltjes, lieve mensen en echt knus. Bovendien wil je op elke hoek een foto maken 📸",
-      "Een pareltje 💙"
+      "Santorini staat bekend om de witte huisjes, blauwe koepels en spectaculaire zonsondergangen. Daardoor denken veel mensen dat het eiland altijd druk is. Gelukkig is dat helemaal niet waar. Zeker buiten het hoogseizoen zijn er genoeg plekken waar je de rust kunt opzoeken. Eén van mijn favoriete plekjes? Pyrgos.",
+      "Pyrgos is een authentiek Grieks bergdorp waar de tijd lijkt stil te staan. Zodra je door de smalle steegjes loopt, voel je direct de ontspannen sfeer. Je vindt er gezellige pleintjes, kleine boetiekjes en leuke souvenirwinkeltjes, terwijl de vriendelijke locals je overal welkom laten voelen. Het is zo'n plek waar je zonder planning uren kunt rondwandelen en telkens weer een nieuw verborgen hoekje ontdekt.",
+      "Wat Pyrgos voor mij extra bijzonder maakt, is dat je hier op bijna iedere straathoek een prachtig uitzicht hebt. De witte huisjes, kleurrijke bloemen, sfeervolle kerkjes en kronkelende straatjes zorgen ervoor dat je je camera of telefoon steeds opnieuw wilt pakken. 📸 Het voelt alsof het hele dorp één groot fotogeniek decor is.",
+      "Ook de uitzichten over Santorini zijn hier fantastisch. Vanaf verschillende plekken in het dorp kijk je uit over de wijngaarden, de zee en de rest van het eiland. Omdat Pyrgos hoger ligt, krijg je een heel ander perspectief dan in de bekende plaatsen Oia en Fira.",
+      "Pyrgos is misschien niet de bekendste plek van Santorini, maar juist dat maakt het zo bijzonder. Zoek je een authentiek Grieks dorp waar je kunt genieten van rust, mooie uitzichten en sfeervolle straatjes? Dan mag dit pareltje absoluut niet ontbreken tijdens je reis naar Santorini."
     ],
     tips: [
-      "Kies ervoor om erheen te gaan vóór lunchtijd, dan is het een stuk minder druk.",
-      "Ga ontbijten (vóór 12 uur) of lunchen (vanaf 12 uur) bij Penelope's. Bizar mooi uitzicht en echt een knus plekje.",
-      "Dwaal door de straatjes zonder Google Maps.",
-      "Stop even net voordat je het dorpje inrijdt — ook daar kun je al een mooie foto maken van het dorpje dat tegen de berg op ligt."
+      "Ga vóór lunchtijd. In de ochtend is het heerlijk rustig en kun je in alle rust door de straatjes dwalen.",
+      "Ontbijt of lunch bij Penelope's. Ga er ontbijten vóór 12.00 uur of schuif daarna aan voor de lunch. Het uitzicht is werkelijk prachtig en de sfeer is ontzettend knus.",
+      "Laat Google Maps even achterwege. De charme van Pyrgos zit juist in het verdwalen. Loop gewoon een steegje in dat je aanspreekt en ontdek zelf de mooiste plekjes.",
+      "Stop net voordat je het dorp binnenrijdt. Vanaf de weg heb je al een schitterend uitzicht op Pyrgos, dat prachtig tegen de heuvel is gebouwd. Perfect voor een eerste foto."
     ]
   },
   {

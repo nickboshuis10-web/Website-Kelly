@@ -572,6 +572,62 @@
     left:0;
     color:var(--teal);
   }
+  .story-cover{cursor:default;}
+  .story-cover.has-gallery{cursor:pointer;}
+  .gallery-trigger{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--teal-deep);
+    background:none;
+    border:none;
+    cursor:pointer;
+    margin:-24px 0 40px;
+    padding:0;
+  }
+  .gallery-trigger:hover{color:var(--teal);}
+
+  .lightbox{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(42,33,29,0.96);
+    z-index:100;
+    overflow-y:auto;
+    padding:32px 20px 60px;
+  }
+  .lightbox.open{display:block;}
+  .lightbox-close{
+    position:fixed;
+    top:24px; right:28px;
+    font-family:'Space Mono', monospace;
+    font-size:0.75rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--paper-light);
+    background:none;
+    border:1px solid rgba(251,248,241,0.4);
+    border-radius:3px;
+    padding:8px 14px;
+    cursor:pointer;
+  }
+  .lightbox-close:hover{border-color:var(--paper-light);}
+  .lightbox-grid{
+    max-width:900px;
+    margin:60px auto 0;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+  .lightbox-grid img{
+    width:100%;
+    border-radius:6px;
+    display:block;
+  }
 </style>
 </head>
 <body>
@@ -600,6 +656,7 @@
 <section id="story-section" style="display:none;">
   <div class="wrap">
     <div class="story-cover" id="story-cover"></div>
+    <button class="gallery-trigger" id="gallery-trigger" style="display:none;">Bekijk alle foto's &rarr;</button>
     <div class="story-content" id="story-content"></div>
     <div class="story-tips" id="story-tips" style="display:none;">
       <span class="mono">Tips</span>
@@ -619,6 +676,11 @@
   <p>KELLY SCHERRENBERG · PERSOONLIJK REISADVISEUR · WESTBROEK · VIA PERSONAL TOUCH TRAVEL</p>
 </footer>
 
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close">Sluiten &times;</button>
+  <div class="lightbox-grid" id="lightbox-grid"></div>
+</div>
+
 <script src="verhalen-data.js"></script>
 <script>
   const slug = new URLSearchParams(window.location.search).get('slug');
@@ -635,6 +697,24 @@
     }
 
     document.getElementById('story-content').innerHTML = verhaal.content.map(p => `<p>${p}</p>`).join('');
+
+    if (verhaal.gallery && verhaal.gallery.length) {
+      const lightbox = document.getElementById('lightbox');
+      const trigger = document.getElementById('gallery-trigger');
+
+      document.getElementById('lightbox-grid').innerHTML = verhaal.gallery.map(src => `<img src="${src}" alt="${verhaal.title}" loading="lazy">`).join('');
+      trigger.textContent = `Bekijk alle foto's (${verhaal.gallery.length + (verhaal.image ? 1 : 0)}) →`;
+      trigger.style.display = '';
+      cover.classList.add('has-gallery');
+
+      const openLightbox = () => { lightbox.classList.add('open'); };
+      trigger.addEventListener('click', openLightbox);
+      cover.addEventListener('click', openLightbox);
+
+      const closeLightbox = () => { lightbox.classList.remove('open'); };
+      document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    }
 
     if (verhaal.tips && verhaal.tips.length) {
       document.getElementById('story-tips-list').innerHTML = verhaal.tips.map(t => `<li>${t}</li>`).join('');
