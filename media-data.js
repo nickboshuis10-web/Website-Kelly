@@ -31,5 +31,25 @@ const MEDIA = [
     image: 'images/verhalen/pyrgos-4.jpg',
     quote: "De kerkjes van Pyrgos, prachtig tegen de heuvel gebouwd.",
     name: 'Kelly'
+  },
+  {
+    image: 'images/verhalen/marrakech-1.jpg',
+    quote: "Op de kameel de woestijn buiten Marrakech in.",
+    name: 'Marit'
+  },
+  {
+    image: 'images/verhalen/marrakech-2.jpg',
+    quote: "Genieten van de Marokkaanse keuken, van tajines tot verse muntthee.",
+    name: 'Marit'
+  },
+  {
+    image: 'images/verhalen/marrakech-3.jpg',
+    quote: "Habibi — de sfeer van de medina in één woord.",
+    name: 'Marit'
+  },
+  {
+    image: 'images/verhalen/marrakech-4.jpg',
+    quote: "De kleurrijke souks van Marrakech, waar kruiden en ambacht samenkomen.",
+    name: 'Marit'
   }
 ];
