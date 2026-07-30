@@ -1,0 +1,11 @@
+Zet hier de foto's voor de reisverhalen, bijvoorbeeld:
+
+  griekenland-zakynthos.jpg
+  mauritius-op-maat.jpg
+
+Verwijs er dan naar in verhalen-data.js bij het juiste verhaal, bijvoorbeeld:
+
+  image: 'images/verhalen/griekenland-zakynthos.jpg'
+
+Zonder foto (image: '') toont de kaart en de verhaalpagina een gekleurd vlak
+in plaats van een foto — dat is dus geen fout, gewoon nog geen foto ingevuld.
