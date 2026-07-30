@@ -518,6 +518,44 @@
     padding:40px;
   }
   .share-panel p{color:var(--ink-soft); max-width:480px; margin-bottom:24px;}
+
+  .media-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+  }
+  @media (max-width:860px){ .media-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:600px){ .media-grid{grid-template-columns:1fr;} }
+
+  .media-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .media-card img{
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+    display:block;
+    background:var(--paper-light);
+  }
+  .media-card .media-body{padding:18px 20px;}
+  .media-card blockquote{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:0.98rem;
+    color:var(--ink);
+    margin-bottom:8px;
+  }
+  .media-card cite{
+    font-family:'Space Mono', monospace;
+    font-style:normal;
+    font-size:0.65rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--teal-deep);
+  }
 </style>
 </head>
 <body>
@@ -546,6 +584,16 @@
 <section>
   <div class="wrap">
     <div class="section-head">
+      <h2>Foto's</h2>
+      <span class="section-num mono">Onderweg</span>
+    </div>
+    <div id="mediaGrid" class="media-grid"></div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
       <h2>Deel jouw foto</h2>
       <span class="section-num mono">Community</span>
     </div>
@@ -563,7 +611,18 @@
   <p>KELLY SCHERRENBERG · PERSOONLIJK REISADVISEUR · WESTBROEK · VIA PERSONAL TOUCH TRAVEL</p>
 </footer>
 
+<script src="media-data.js"></script>
 <script>
+  document.getElementById('mediaGrid').innerHTML = MEDIA.map(m => `
+    <div class="media-card reveal">
+      <img src="${m.image}" alt="${m.quote}" loading="lazy">
+      <div class="media-body">
+        <blockquote>${m.quote}</blockquote>
+        ${m.name ? `<cite>— ${m.name}</cite>` : ''}
+      </div>
+    </div>
+  `).join('');
+
   const els = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
