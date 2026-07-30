@@ -614,13 +614,13 @@
 <section>
   <div class="wrap">
     <div class="section-head">
-      <h2>Wat klanten zeggen</h2>
-      <span class="section-num mono">Reviews</span>
+      <h2>Wat reizigers zeggen</h2>
+      <span class="section-num mono">Ervaringen</span>
     </div>
-    <div class="quote-strip reveal" id="quote-strip"></div>
-    <a href="https://www.google.com/search?q=Kelly+Scherrenberg+Personal+Touch+Travel+reviews" target="_blank" rel="noopener" class="google-badge" style="margin-top:24px;">
-      <span class="stars">★★★★★</span> Bekijk alle Google reviews
+    <a href="https://www.google.com/search?q=Kelly+Scherrenberg+Personal+Touch+Travel+Reviews" target="_blank" rel="noopener" class="google-badge" style="margin-bottom:28px;">
+      <span class="stars">★★★★★</span> Bekijk alle reviews op Google
     </a>
+    <div class="quote-strip reveal" id="quote-strip"></div>
   </div>
 </section>
 
@@ -664,7 +664,7 @@
   `).join('');
 
   document.getElementById('quote-strip').innerHTML = REVIEWS.map(r => `
-    <blockquote>&ldquo;${r.quote}&rdquo;<cite>— ${r.name}</cite></blockquote>
+    <blockquote>${r.quote}<cite>— ${r.name}</cite></blockquote>
   `).join('');
 
   const els = document.querySelectorAll('.reveal');
