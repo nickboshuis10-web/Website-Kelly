@@ -482,31 +482,136 @@
   }
 
   /* ---------- FOOTER ---------- */
-  footer{
-    padding:36px 0 50px;
+  .site-footer{
+    background:var(--teal);
+    color:var(--paper-light);
+    padding:64px 0 0;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1.5fr 0.9fr 1fr;
+    gap:40px;
+    padding-bottom:56px;
+  }
+  .footer-col{
+    padding-left:36px;
+    border-left:1px solid rgba(251,248,241,0.22);
+  }
+  .footer-col:first-child{
+    padding-left:0;
+    border-left:none;
+  }
+  .footer-brand{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:14px;
+  }
+  .footer-logo{
+    height:62px;
+    width:auto;
+    filter:brightness(0) invert(1);
+    opacity:0.96;
+  }
+  .footer-tagline{
+    font-family:'Space Mono', monospace;
+    font-size:0.7rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:rgba(251,248,241,0.75);
+  }
+  .footer-legal{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .footer-legal p{
+    font-size:0.85rem;
+    line-height:1.6;
+    color:rgba(251,248,241,0.82);
+    margin-bottom:12px;
+  }
+  .footer-legal p:last-child{margin-bottom:0;}
+  .footer-badges{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+  }
+  .footer-badge{
+    width:72px;
+    height:72px;
+    border:2px solid rgba(251,248,241,0.55);
+    border-radius:50%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    gap:2px;
+    flex-shrink:0;
+  }
+  .footer-badge-label{
+    font-family:'Space Mono', monospace;
+    font-size:0.64rem;
+    letter-spacing:0.05em;
+    color:rgba(251,248,241,0.95);
+    font-weight:700;
+  }
+  .footer-badge-num{
+    font-family:'Space Mono', monospace;
+    font-size:0.56rem;
+    color:rgba(251,248,241,0.7);
+  }
+  .footer-contact{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .footer-contact-link{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Space Mono', monospace;
+    font-size:0.76rem;
+    letter-spacing:0.03em;
+    color:var(--paper-light);
+    cursor:pointer;
+    transition:color 0.2s ease, transform 0.2s ease;
+    width:fit-content;
+  }
+  .footer-contact-link svg{
+    width:17px;
+    height:17px;
+    flex-shrink:0;
+    transition:transform 0.2s ease;
+  }
+  .footer-contact-link:hover{
+    color:var(--gold);
+    transform:translateX(3px);
+  }
+  .footer-contact-link:hover svg{transform:scale(1.12);}
+  .footer-bottom{
+    border-top:1px solid rgba(251,248,241,0.22);
+    padding:22px 0;
     text-align:center;
   }
-  footer p{
+  .footer-bottom p{
     font-family:'Space Mono', monospace;
-    font-size:0.68rem;
-    color:var(--ink-soft);
+    font-size:0.66rem;
     letter-spacing:0.04em;
+    color:rgba(251,248,241,0.75);
   }
-  footer .footer-links{
-    margin-top:16px;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:8px 20px;
+  @media (max-width:900px){
+    .footer-grid{grid-template-columns:1fr 1fr; row-gap:44px;}
+    .footer-col:nth-child(3){border-left:none; padding-left:0;}
   }
-  footer .footer-links a{
-    font-family:'Space Mono', monospace;
-    font-size:0.68rem;
-    text-transform:uppercase;
-    letter-spacing:0.04em;
-    color:var(--ink-soft);
+  @media (max-width:600px){
+    .footer-grid{grid-template-columns:1fr; row-gap:36px; padding-bottom:40px;}
+    .footer-col{border-left:none; padding-left:0; border-top:1px solid rgba(251,248,241,0.22); padding-top:32px;}
+    .footer-col:first-child{border-top:none; padding-top:0;}
+    .footer-badges{justify-content:flex-start;}
   }
-  footer .footer-links a:hover{color:var(--teal);}
 
   /* ---------- REVEAL ---------- */
   .reveal{
@@ -555,14 +660,46 @@
   </div>
 </section>
 
-<footer>
-  <p>KELLY SCHERRENBERG · PERSOONLIJK REISADVISEUR · WESTBROEK · VIA PERSONAL TOUCH TRAVEL</p>
-  <div class="footer-links">
-    <a href="mailto:kelly.scherrenberg@personaltouchtravel.nl">E-mail</a>
-    <a href="https://wa.me/31647268845" target="_blank" rel="noopener">WhatsApp</a>
-    <a href="https://www.linkedin.com/in/kelly-scherrenberg/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://www.instagram.com/kelly.personaltouchtravel" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://www.facebook.com/kellyscherrenbergpersonaltouchtravel" target="_blank" rel="noopener">Facebook</a>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-col footer-brand">
+      <img class="footer-logo" src="images/logo.png" alt="Kelly Scherrenberg">
+      <p class="footer-tagline">Persoonlijk Reisadviseur</p>
+    </div>
+    <div class="footer-col footer-legal">
+      <p>Ik ben zelfstandig ondernemer en aangesloten bij Personal Touch Travel.</p>
+      <p>Alle boekingen worden ondergebracht bij Personal Touch Travel, lid van ANVR (03021) en SGR (3198).</p>
+      <p>Je boekt en betaalt bij Personal Touch Travel (KvK 27376510).</p>
+    </div>
+    <div class="footer-col footer-badges">
+      <div class="footer-badge"><span class="footer-badge-label">ANVR</span><span class="footer-badge-num">03021</span></div>
+      <div class="footer-badge"><span class="footer-badge-label">SGR</span><span class="footer-badge-num">3198</span></div>
+    </div>
+    <div class="footer-col footer-contact">
+      <a class="footer-contact-link" href="mailto:kelly.scherrenberg@personaltouchtravel.nl">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg>
+        E-mail
+      </a>
+      <a class="footer-contact-link" href="https://wa.me/31647268845" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 0 0-7.8 13.4L3 21l4.7-1.2A9 9 0 1 0 12 3z"/><path d="M8.3 8.6c0 4.2 3 7.1 7 7.1"/></svg>
+        WhatsApp
+      </a>
+      <a class="footer-contact-link" href="https://www.linkedin.com/in/kelly-scherrenberg/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10.5v6M7.5 7.5v.01"/><path d="M11.5 16.5v-3.5a2 2 0 0 1 4 0v3.5M11.5 13v3.5"/></svg>
+        LinkedIn
+      </a>
+      <a class="footer-contact-link" href="https://www.instagram.com/kelly.personaltouchtravel" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+      <a class="footer-contact-link" href="https://www.facebook.com/kellyscherrenbergpersonaltouchtravel" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2a4 4 0 0 0-4 4v4H7v4h2v6h4v-6h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        Facebook
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Kelly Scherrenberg &bull; Persoonlijk Reisadviseur &bull; Onderdeel van Personal Touch Travel</p>
   </div>
 </footer>
 
