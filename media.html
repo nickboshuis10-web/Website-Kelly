@@ -511,62 +511,13 @@
   }
 </style>
 <style>
-  .media-grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:24px;
-  }
-  @media (max-width:860px){ .media-grid{grid-template-columns:1fr 1fr;} }
-  @media (max-width:600px){ .media-grid{grid-template-columns:1fr;} }
-
-  .media-card{
+  .share-panel{
     background:var(--card);
-    border:1px solid var(--line);
-    border-radius:4px;
-    overflow:hidden;
-  }
-  .media-card img{
-    width:100%;
-    aspect-ratio:4/3;
-    object-fit:cover;
-    display:block;
-    background:var(--paper-light);
-  }
-  .media-card .media-body{padding:18px 20px;}
-  .media-card blockquote{
-    font-family:'Fraunces', serif;
-    font-style:italic;
-    font-size:0.98rem;
-    color:var(--ink);
-    margin-bottom:8px;
-  }
-  .media-card cite{
-    font-family:'Space Mono', monospace;
-    font-style:normal;
-    font-size:0.65rem;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    color:var(--teal-deep);
-  }
-  .media-empty{
-    grid-column:1/-1;
-    text-align:center;
-    padding:60px 20px;
-    color:var(--ink-soft);
-    font-size:0.92rem;
-  }
-  .form-embed-wrap{
     border:1px solid var(--line);
     border-radius:6px;
-    overflow:hidden;
-    background:var(--card);
+    padding:40px;
   }
-  .form-embed-wrap iframe{
-    width:100%;
-    height:900px;
-    border:0;
-    display:block;
-  }
+  .share-panel p{color:var(--ink-soft); max-width:480px; margin-bottom:24px;}
 </style>
 </head>
 <body>
@@ -595,25 +546,15 @@
 <section>
   <div class="wrap">
     <div class="section-head">
-      <h2>Foto's</h2>
+      <h2>Deel jouw foto</h2>
       <span class="section-num mono">Community</span>
     </div>
-    <div id="mediaGrid" class="media-grid">
-      <p class="media-empty">Foto's worden geladen...</p>
-    </div>
-  </div>
-</section>
-
-<section style="background:var(--paper-light); border-top:1px solid var(--line);">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Deel jouw foto</h2>
-      <span class="section-num mono">Formulier</span>
-    </div>
-    <p style="color:var(--ink-soft); max-width:560px; margin-bottom:24px;">Upload een foto en schrijf er een korte quote bij. Na een korte controle verschijnt jouw foto hierboven in de galerij.</p>
-    <div class="form-embed-wrap">
-      <!-- Vervang de src hieronder door de "Insluiten"-link van je eigen Google Form -->
-      <iframe src="https://docs.google.com/forms/d/e/VERVANG_DIT_MET_JOUW_FORM_ID/viewform?embedded=true">Laden…</iframe>
+    <div class="share-panel reveal">
+      <p>Was je op reis met Kelly's hulp en heb je een mooie foto? Stuur 'm door via WhatsApp of e-mail, met een korte quote erbij — dan komt-ie hier op de site te staan.</p>
+      <div class="cta-row">
+        <a href="https://wa.me/31647268845" target="_blank" rel="noopener" class="btn btn-primary">Stuur een appje</a>
+        <a href="mailto:kelly.scherrenberg@personaltouchtravel.nl" class="btn btn-ghost">Stuur een e-mail</a>
+      </div>
     </div>
   </div>
 </section>
@@ -623,76 +564,6 @@
 </footer>
 
 <script>
-  // Vervang deze URL door de "Publiceren op internet" CSV-link van je Google Sheet
-  const SHEET_CSV_URL = "VERVANG_DIT_MET_JOUW_SHEET_CSV_URL";
-
-  function driveDirectImageUrl(driveLink){
-    const match = driveLink.match(/[-\w]{25,}/);
-    if(!match) return null;
-    return `https://drive.google.com/uc?export=view&id=${match[0]}`;
-  }
-
-  function parseCSV(text){
-    const rows = text.trim().split("\n").map(r => {
-      // simpele CSV-split die rekening houdt met quotes
-      const cells = [];
-      let cur = "", inQuotes = false;
-      for(let i=0;i<r.length;i++){
-        const c = r[i];
-        if(c === '"'){ inQuotes = !inQuotes; }
-        else if(c === ',' && !inQuotes){ cells.push(cur); cur=""; }
-        else{ cur += c; }
-      }
-      cells.push(cur);
-      return cells;
-    });
-    return rows;
-  }
-
-  async function loadMedia(){
-    const grid = document.getElementById('mediaGrid');
-    if(SHEET_CSV_URL.startsWith("VERVANG")){
-      grid.innerHTML = '<p class="media-empty">Nog geen foto\'s ingesteld. Koppel hierboven eerst de Google Sheet CSV-link.</p>';
-      return;
-    }
-    try{
-      const res = await fetch(SHEET_CSV_URL);
-      const text = await res.text();
-      const rows = parseCSV(text);
-      const header = rows[0].map(h => h.trim().toLowerCase());
-      const photoIdx = header.findIndex(h => h.includes('foto') || h.includes('photo') || h.includes('afbeelding'));
-      const quoteIdx = header.findIndex(h => h.includes('quote') || h.includes('tekst'));
-      const nameIdx = header.findIndex(h => h.includes('naam') || h.includes('name'));
-
-      const items = rows.slice(1).filter(r => r.length > 1 && r[photoIdx]);
-
-      if(items.length === 0){
-        grid.innerHTML = '<p class="media-empty">Nog geen foto\'s binnengekomen. Zodra iemand het formulier invult, verschijnt het hier.</p>';
-        return;
-      }
-
-      grid.innerHTML = "";
-      items.forEach(row => {
-        const img = driveDirectImageUrl(row[photoIdx] || "");
-        const quote = quoteIdx > -1 ? row[quoteIdx] : "";
-        const name = nameIdx > -1 ? row[nameIdx] : "";
-        const card = document.createElement('div');
-        card.className = 'media-card';
-        card.innerHTML = `
-          ${img ? `<img src="${img}" alt="${name}" loading="lazy">` : ''}
-          <div class="media-body">
-            ${quote ? `<blockquote>${quote}</blockquote>` : ''}
-            ${name ? `<cite>— ${name}</cite>` : ''}
-          </div>`;
-        grid.appendChild(card);
-      });
-    }catch(err){
-      grid.innerHTML = '<p class="media-empty">Foto\'s konden niet geladen worden. Controleer of de Sheet gepubliceerd is op internet.</p>';
-    }
-  }
-
-  loadMedia();
-
   const els = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
