@@ -543,6 +543,35 @@
     color:var(--ink);
     line-height:1.5;
   }
+  .story-tips{
+    max-width:680px;
+    margin:12px 0 40px;
+    border:1px solid var(--line);
+    border-radius:6px;
+    background:var(--card);
+    padding:28px 30px;
+  }
+  .story-tips .mono{
+    font-size:0.68rem;
+    color:var(--teal-deep);
+    display:block;
+    margin-bottom:14px;
+  }
+  .story-tips ul{list-style:none;}
+  .story-tips li{
+    color:var(--ink-soft);
+    font-size:0.95rem;
+    padding:12px 0 12px 22px;
+    border-top:1px solid var(--line);
+    position:relative;
+  }
+  .story-tips li:first-child{border-top:none; padding-top:0;}
+  .story-tips li::before{
+    content:'—';
+    position:absolute;
+    left:0;
+    color:var(--teal);
+  }
 </style>
 </head>
 <body>
@@ -572,6 +601,10 @@
   <div class="wrap">
     <div class="story-cover" id="story-cover"></div>
     <div class="story-content" id="story-content"></div>
+    <div class="story-tips" id="story-tips" style="display:none;">
+      <span class="mono">Tips</span>
+      <ul id="story-tips-list"></ul>
+    </div>
   </div>
 </section>
 
@@ -602,6 +635,12 @@
     }
 
     document.getElementById('story-content').innerHTML = verhaal.content.map(p => `<p>${p}</p>`).join('');
+
+    if (verhaal.tips && verhaal.tips.length) {
+      document.getElementById('story-tips-list').innerHTML = verhaal.tips.map(t => `<li>${t}</li>`).join('');
+      document.getElementById('story-tips').style.display = '';
+    }
+
     document.getElementById('story-section').style.display = '';
   } else {
     document.getElementById('notfound-section').style.display = '';

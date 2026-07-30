@@ -17,19 +17,29 @@
              Laat leeg ("") als er nog geen foto is — dan verschijnt een gekleurd vlak i.p.v. een foto.
   - date:    optioneel, bv. "Juni 2025" — mag ook leeg blijven
   - content: het verhaal zelf, als lijst van alinea's (elke alinea = één regel tekst)
+  - tips:    optioneel — lijst van korte praktische tips, verschijnt als apart lijstje
+             onder het verhaal. Laat weg of gebruik een lege lijst [] als er geen tips zijn.
 */
 
 const VERHALEN = [
   {
-    slug: 'griekenland-zakynthos',
-    region: 'Griekenland · Zakynthos',
-    stamp: 'GR',
-    title: 'Blauw water en niets doen',
-    excerpt: "Voorbeeldverhaal — hier deelt Kelly straks haar eigen ervaring, met foto's en tips voor wie hetzelfde wil boeken.",
+    slug: 'griekenland-santorini',
+    region: 'Griekenland · Santorini',
+    stamp: 'SA',
+    title: 'Een pareltje op Santorini',
+    excerpt: "Santorini hoeft niet altijd druk te zijn — er zijn genoeg plekjes die je helemaal voor jezelf hebt als je weet wanneer je waar het beste heen kan gaan.",
     image: '',
     date: '',
     content: [
-      "Voorbeeldverhaal — hier deelt Kelly straks haar eigen ervaring, met foto's en tips voor wie hetzelfde wil boeken."
+      "Santorini hoeft (zeker buiten het hoogseizoen) niet altijd druk te zijn. Er zijn genoeg plekjes die je helemaal voor jezelf hebt als je weet wanneer je waar het beste heen kan gaan. Ik help je graag met het samenstellen van een reis naar dit prachtige unieke eiland.",
+      "Te leuk plaatsje waar je eindeloos kan dwalen door steegjes. Leuke souvenirwinkeltjes, lieve mensen en echt knus. Bovendien wil je op elke hoek een foto maken 📸",
+      "Een pareltje 💙"
+    ],
+    tips: [
+      "Kies ervoor om erheen te gaan vóór lunchtijd, dan is het een stuk minder druk.",
+      "Ga ontbijten (vóór 12 uur) of lunchen (vanaf 12 uur) bij Penelope's. Bizar mooi uitzicht en echt een knus plekje.",
+      "Dwaal door de straatjes zonder Google Maps.",
+      "Stop even net voordat je het dorpje inrijdt — ook daar kun je al een mooie foto maken van het dorpje dat tegen de berg op ligt."
     ]
   },
   {
