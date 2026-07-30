@@ -543,6 +543,27 @@
     color:var(--ink);
     line-height:1.5;
   }
+  .story-content h3{
+    font-size:1.3rem;
+    margin:36px 0 14px;
+  }
+  .story-content ul{
+    max-width:680px;
+    margin:0 0 22px;
+    padding-left:0;
+    list-style:none;
+  }
+  .story-content ul li{
+    color:var(--ink-soft);
+    padding:4px 0 4px 20px;
+    position:relative;
+  }
+  .story-content ul li::before{
+    content:'—';
+    position:absolute;
+    left:0;
+    color:var(--teal);
+  }
   .story-tips{
     max-width:680px;
     margin:12px 0 40px;
@@ -696,7 +717,12 @@
       cover.style.backgroundImage = `url('${verhaal.image}')`;
     }
 
-    document.getElementById('story-content').innerHTML = verhaal.content.map(p => `<p>${p}</p>`).join('');
+    document.getElementById('story-content').innerHTML = verhaal.content.map(block => {
+      if (typeof block === 'string') return `<p>${block}</p>`;
+      if (block.type === 'h3') return `<h3>${block.text}</h3>`;
+      if (block.type === 'ul') return `<ul>${block.items.map(i => `<li>${i}</li>`).join('')}</ul>`;
+      return '';
+    }).join('');
 
     if (verhaal.gallery && verhaal.gallery.length) {
       const lightbox = document.getElementById('lightbox');

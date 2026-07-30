@@ -20,7 +20,11 @@
              blijft bovenaan zichtbaar; klik erop (of op "Bekijk alle foto's") om de foto's uit
              gallery in een lightbox te zien. Laat weg of gebruik een lege lijst [] voor geen galerij.
   - date:    optioneel, bv. "Juni 2025" — mag ook leeg blijven
-  - content: het verhaal zelf, als lijst van alinea's (elke alinea = één regel tekst)
+  - content: het verhaal zelf, als lijst van blokken. Meestal is een blok gewoon een stukje
+             tekst (alinea), bijvoorbeeld: "Dit is een alinea.". Voor een langer verhaal met
+             tussenkopjes en/of een lijstje kun je ook dit gebruiken:
+               { type: 'h3', text: 'Een tussenkopje' }
+               { type: 'ul', items: ['Punt één', 'Punt twee'] }
   - tips:    optioneel — lijst van korte praktische tips, verschijnt als apart lijstje
              onder het verhaal. Laat weg of gebruik een lege lijst [] als er geen tips zijn.
 */
@@ -51,6 +55,52 @@ const VERHALEN = [
       "Ontbijt of lunch bij Penelope's. Ga er ontbijten vóór 12.00 uur of schuif daarna aan voor de lunch. Het uitzicht is werkelijk prachtig en de sfeer is ontzettend knus.",
       "Laat Google Maps even achterwege. De charme van Pyrgos zit juist in het verdwalen. Loop gewoon een steegje in dat je aanspreekt en ontdek zelf de mooiste plekjes.",
       "Stop net voordat je het dorp binnenrijdt. Vanaf de weg heb je al een schitterend uitzicht op Pyrgos, dat prachtig tegen de heuvel is gebouwd. Perfect voor een eerste foto."
+    ]
+  },
+  {
+    slug: 'marokko-marrakech',
+    region: 'Marokko · Marrakech',
+    stamp: 'MA',
+    title: 'Marrakech met vriendinnen: 4 dagen vol kleur, cultuur en gezelligheid',
+    excerpt: "Marrakech is dé bestemming voor een weekendje weg met vriendinnen — kleurrijke straatjes, sfeervolle riads en bijzondere activiteiten in een paar dagen tijd.",
+    image: 'images/verhalen/marrakech-1.jpg',
+    gallery: [
+      'images/verhalen/marrakech-2.jpg',
+      'images/verhalen/marrakech-3.jpg',
+      'images/verhalen/marrakech-4.jpg'
+    ],
+    date: '',
+    content: [
+      "Sommige bestemmingen zijn perfect voor een weekendje weg met vriendinnen. Marrakech is daar absoluut één van. In slechts een paar dagen dompel je je onder in een compleet andere wereld vol kleurrijke straatjes, sfeervolle riads, heerlijke gerechten en bijzondere activiteiten.",
+      "Voor Marit en haar vriendinnen stelde ik een reis samen waarin ontspanning, cultuur en gezelligheid perfect samenkwamen. Van dwalen door de medina tot een workshop tussen de lokale ambachtslieden: Marrakech verrast op iedere straathoek.",
+      { type: 'h3', text: 'Slapen in een sfeervolle riad' },
+      "Een stedentrip naar Marrakech is niet compleet zonder een verblijf in een authentieke riad. Midden in de oude medina, achter een bescheiden deur, schuilt vaak een oase van rust. Denk aan een prachtige binnenplaats, een klein zwembad en een dakterras waar je de dag afsluit met uitzicht over de stad.",
+      "Het is de perfecte uitvalsbasis om Marrakech te ontdekken.",
+      { type: 'h3', text: 'De magie van de medina' },
+      "Tijdens een wandeling door de medina valt er iedere minuut iets nieuws te ontdekken. Smalle steegjes leiden naar kleurrijke souks waar kruiden, tapijten, leerwaren en handgemaakte souvenirs worden verkocht. De geuren, kleuren en geluiden maken Marrakech tot een stad die al je zintuigen prikkelt.",
+      "Natuurlijk mag een bezoek aan het beroemde Djemaa el Fna plein niet ontbreken. Overdag bruist het plein van de marktkraampjes en straatartiesten, terwijl het 's avonds verandert in één groot openluchtrestaurant.",
+      { type: 'h3', text: 'Ontdek de mooiste plekken van Marrakech' },
+      "Samen met een lokale gids ontdek je de verhalen achter de stad. Zo bezochten we onder andere:",
+      { type: 'ul', items: [
+        'Het indrukwekkende Bahia Palace',
+        'De iconische Koutoubia Moskee',
+        'De Menara-tuinen',
+        'De historische Joodse wijk (Mellah)'
+      ] },
+      "Door de uitleg van een gids leer je Marrakech op een heel andere manier kennen dan wanneer je zelf door de stad loopt.",
+      { type: 'h3', text: 'Creatief aan de slag tijdens een pottery workshop' },
+      "Een van de leukste activiteiten van deze reis was zonder twijfel de pottery & ceramic workshop.",
+      "Onder begeleiding van lokale ambachtslieden maakten de vriendinnen kennis met eeuwenoude Marokkaanse technieken. Een bijzondere ervaring waarbij niet alleen mooie herinneringen werden gemaakt, maar ook een uniek souvenir mee naar huis ging.",
+      "Juist dit soort activiteiten zorgen ervoor dat een stedentrip nét wat persoonlijker wordt.",
+      { type: 'h3', text: 'Genieten van de Marokkaanse keuken' },
+      "Marrakech staat bekend om haar heerlijke keuken. Van uitgebreide ontbijten in de riad tot sfeervolle diners op dakterrassen met uitzicht over de stad.",
+      "Verse muntthee, kleurrijke salades, traditionele tajines en zoete Marokkaanse lekkernijen maken iedere maaltijd weer een belevenis.",
+      { type: 'h3', text: 'Een reis die helemaal bij jullie past' },
+      "Iedere vriendinnengroep is anders. Waar de één graag cultuur opsnuift, wil de ander juist ontspannen, shoppen of genieten van het lokale eten. Daarom stel ik iedere reis volledig op maat samen.",
+      "Deze Marrakech-reis laat zien dat je in vier dagen ontzettend veel kunt beleven zonder dat het gehaast voelt. De perfecte mix van cultuur, ontspanning, gezelligheid en unieke ervaringen.",
+      { type: 'h3', text: 'Ook een stedentrip naar Marrakech plannen?' },
+      "Droom jij van een paar dagen Marrakech met vriendinnen, familie of je partner? Ik help je graag met het samenstellen van een reis die helemaal aansluit bij jullie wensen.",
+      "Van bijzondere accommodaties en leuke activiteiten tot de mooiste restaurants en handige tips: ik regel het met liefde, zodat jullie alleen nog maar hoeven te genieten."
     ]
   },
   {

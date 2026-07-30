@@ -371,6 +371,7 @@
     gap:28px;
   }
   .postcard{
+    display:block;
     background:var(--card);
     border:1px solid var(--line);
     border-radius:4px;
@@ -421,7 +422,7 @@
     border-radius:6px;
     padding:52px 44px;
     display:grid;
-    grid-template-columns:repeat(3, 1fr);
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
     gap:28px 36px;
   }
   .quote-strip blockquote{
@@ -605,33 +606,21 @@
       <h2>Reisverhalen</h2>
       <span class="section-num mono">02 — Uit het dagboek</span>
     </div>
-    <div class="postcard-grid">
-      <div class="postcard reveal">
-        <div class="postcard-photo"><div class="postcard-stamp">GR</div></div>
-        <div class="postcard-body">
-          <span class="mono">Griekenland · Zakynthos</span>
-          <h3>Blauw water en niets doen</h3>
-          <p>Voorbeeldverhaal — hier deelt Kelly straks haar eigen ervaring, met foto's en tips.</p>
-        </div>
-      </div>
-      <div class="postcard reveal">
-        <div class="postcard-photo"><div class="postcard-stamp">MU</div></div>
-        <div class="postcard-body">
-          <span class="mono">Mauritius · Op maat</span>
-          <h3>Een reis op maat, van A tot Z</h3>
-          <p>Voorbeeldverhaal — een persoonlijk verslag van hoe een reis tot stand kwam.</p>
-        </div>
-      </div>
-      <div class="postcard reveal">
-        <div class="postcard-photo"><div class="postcard-stamp">NZ</div></div>
-        <div class="postcard-body">
-          <span class="mono">Nieuw-Zeeland · Rondreis</span>
-          <h3>Twee maanden onderweg</h3>
-          <p>Voorbeeldverhaal — ruimte voor een langer reisverslag met een fotoserie.</p>
-        </div>
-      </div>
-    </div>
+    <div class="postcard-grid" id="postcard-grid-preview"></div>
     <a href="reisverhalen.html" class="btn btn-ghost" style="margin-top:32px; display:inline-block;">Alle reisverhalen</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Wat klanten zeggen</h2>
+      <span class="section-num mono">Reviews</span>
+    </div>
+    <div class="quote-strip reveal" id="quote-strip"></div>
+    <a href="https://www.google.com/search?q=Kelly+Scherrenberg+Personal+Touch+Travel+reviews" target="_blank" rel="noopener" class="google-badge" style="margin-top:24px;">
+      <span class="stars">★★★★★</span> Bekijk alle Google reviews
+    </a>
   </div>
 </section>
 
@@ -658,7 +647,26 @@
   <p>KELLY SCHERRENBERG · PERSOONLIJK REISADVISEUR · WESTBROEK · VIA PERSONAL TOUCH TRAVEL</p>
 </footer>
 
+<script src="verhalen-data.js"></script>
+<script src="reviews-data.js"></script>
 <script>
+  document.getElementById('postcard-grid-preview').innerHTML = VERHALEN.slice(0, 3).map(v => `
+    <a class="postcard reveal" href="verhaal.html?slug=${encodeURIComponent(v.slug)}">
+      <div class="postcard-photo"${v.image ? ` style="background-image:url('${v.image}'); background-size:cover; background-position:center;"` : ''}>
+        <div class="postcard-stamp">${v.stamp}</div>
+      </div>
+      <div class="postcard-body">
+        <span class="mono">${v.region}</span>
+        <h3>${v.title}</h3>
+        <p>${v.excerpt}</p>
+      </div>
+    </a>
+  `).join('');
+
+  document.getElementById('quote-strip').innerHTML = REVIEWS.map(r => `
+    <blockquote>&ldquo;${r.quote}&rdquo;<cite>— ${r.name}</cite></blockquote>
+  `).join('');
+
   const els = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
