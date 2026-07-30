@@ -505,6 +505,21 @@
     color:var(--ink-soft);
     letter-spacing:0.04em;
   }
+  footer .footer-links{
+    margin-top:16px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px 20px;
+  }
+  footer .footer-links a{
+    font-family:'Space Mono', monospace;
+    font-size:0.68rem;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    color:var(--ink-soft);
+  }
+  footer .footer-links a:hover{color:var(--teal);}
 
   /* ---------- REVEAL ---------- */
   .reveal{
@@ -587,7 +602,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2>Over Kelly</h2>
-      <span class="section-num mono">01 — Reisadviseur</span>
+      <span class="section-num mono">Reisadviseur</span>
     </div>
     <div class="about-grid">
       <div class="about-photo reveal"></div>
@@ -604,7 +619,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2>Reisverhalen</h2>
-      <span class="section-num mono">02 — Uit het dagboek</span>
+      <span class="section-num mono">Uit het dagboek</span>
     </div>
     <div class="postcard-grid" id="postcard-grid-preview"></div>
     <a href="reisverhalen.html" class="btn btn-ghost" style="margin-top:32px; display:inline-block;">Alle reisverhalen</a>
@@ -645,6 +660,13 @@
 
 <footer>
   <p>KELLY SCHERRENBERG · PERSOONLIJK REISADVISEUR · WESTBROEK · VIA PERSONAL TOUCH TRAVEL</p>
+  <div class="footer-links">
+    <a href="mailto:kelly.scherrenberg@personaltouchtravel.nl">E-mail</a>
+    <a href="https://wa.me/31647268845" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://www.linkedin.com/in/kelly-scherrenberg/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.instagram.com/kelly.personaltouchtravel" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.facebook.com/kellyscherrenbergpersonaltouchtravel" target="_blank" rel="noopener">Facebook</a>
+  </div>
 </footer>
 
 <script src="verhalen-data.js"></script>

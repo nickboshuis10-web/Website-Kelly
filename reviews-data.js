@@ -30,7 +30,7 @@ const REVIEWS = [
   },
   {
     quote: "Zowel vooraf als tijdens de reis denkt Kelly overal in mee, waardoor er niets meer zelf uitgezocht hoefde te worden.",
-    name: 'Marit Lagerweij'
+    name: 'Marit Lagerweij, Marokko'
   },
   {
     quote: "Snel gereageerd met opties die echt aansloten bij de eigen wensenlijst, wat leidde tot een top vakantie.",
