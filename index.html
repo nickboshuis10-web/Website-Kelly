@@ -64,6 +64,19 @@
     background:rgba(233,226,206,0.92);
     backdrop-filter:blur(6px);
     border-bottom:1px solid var(--line);
+    transition:background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+  }
+  nav.nav-on-hero{
+    position:fixed;
+    top:0; left:0; right:0;
+    background:transparent;
+    backdrop-filter:none;
+    border-bottom-color:transparent;
+  }
+  nav.nav-on-hero.scrolled{
+    background:rgba(233,226,206,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom-color:var(--line);
   }
   nav .wrap{
     display:flex;
@@ -120,9 +133,43 @@
     .brand-logo{height:60px;}
   }
 
+  /* ---------- PHOTO HERO ---------- */
+  .photo-hero{
+    position:relative;
+    height:58vh;
+    min-height:400px;
+    overflow:hidden;
+  }
+  .photo-hero-image{
+    position:absolute;
+    top:-15%;
+    left:0;
+    width:100%;
+    height:130%;
+    background-image:url('images/hero-home.jpg');
+    background-size:cover;
+    background-position:center;
+    will-change:transform;
+  }
+  .photo-hero-overlay{
+    position:absolute;
+    inset:0;
+    background:var(--paper);
+    opacity:0.3;
+  }
+  @media (prefers-reduced-motion:reduce){
+    .photo-hero-image{transform:none !important;}
+  }
+  @media (max-width:760px){
+    .photo-hero{height:42vh; min-height:280px;}
+  }
+
   /* ---------- HERO / BOARDING PASS ---------- */
   header.hero{
     padding:72px 0 40px;
+    position:relative;
+    z-index:2;
+    margin-top:-368px;
   }
   .eyebrow{
     font-size:0.72rem;
@@ -329,6 +376,7 @@
   }
 
   @media (max-width:760px){
+    header.hero{margin-top:-640px;}
     .boarding-pass{grid-template-columns:1fr;}
     .bp-stub{
       flex-direction:row;
@@ -756,7 +804,7 @@
 </head>
 <body>
 
-<nav>
+<nav class="nav-on-hero" id="siteNav">
   <div class="wrap">
     <a href="index.html"><img class="brand-logo" src="images/logo.png" alt="Kelly Scherrenberg — Persoonlijk Reisadviseur"></a>
     <div class="nav-links">
@@ -768,6 +816,11 @@
     </div>
   </div>
 </nav>
+
+<section class="photo-hero">
+  <div class="photo-hero-image" id="heroParallaxImg"></div>
+  <div class="photo-hero-overlay"></div>
+</section>
 
 <header class="hero">
   <div class="wrap">
@@ -957,6 +1010,36 @@
     });
   }, {threshold:0.15});
   els.forEach(el=>obs.observe(el));
+
+  const siteNav = document.getElementById('siteNav');
+  const photoHero = document.querySelector('.photo-hero');
+  if (siteNav && photoHero) {
+    const toggleNav = () => {
+      if (window.scrollY > photoHero.offsetHeight - 90) {
+        siteNav.classList.add('scrolled');
+      } else {
+        siteNav.classList.remove('scrolled');
+      }
+    };
+    toggleNav();
+    window.addEventListener('scroll', toggleNav, { passive: true });
+  }
+
+  const heroParallaxImg = document.getElementById('heroParallaxImg');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (heroParallaxImg && !prefersReducedMotion) {
+    let ticking = false;
+    const updateParallax = () => {
+      heroParallaxImg.style.transform = `translateY(${window.scrollY * 0.25}px)`;
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
 </script>
 
 <div class="wa-float" id="waFloat">
