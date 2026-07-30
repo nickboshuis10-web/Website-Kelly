@@ -283,6 +283,50 @@
     transform:rotate(-14deg);
     line-height:1.2;
   }
+  .journey-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .journey-step{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-height:30px;
+    position:relative;
+  }
+  .journey-step:not(:last-child)::after{
+    content:'';
+    position:absolute;
+    left:8.5px;
+    top:50%;
+    width:1px;
+    height:30px;
+    background:rgba(251,248,241,0.4);
+  }
+  .journey-marker-slot{
+    width:18px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .journey-dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--paper-light);
+  }
+  .journey-plane{
+    width:15px;
+    height:15px;
+    transform:rotate(45deg);
+    color:var(--paper-light);
+  }
+  .journey-label{
+    font-family:'Fraunces', serif;
+    font-size:0.88rem;
+  }
 
   @media (max-width:760px){
     .boarding-pass{grid-template-columns:1fr;}
@@ -682,8 +726,27 @@
         <div>
           <div class="stub-label">Passagier</div>
           <div class="stub-value">K. Scherrenberg</div>
-          <div class="stub-label">Standplaats</div>
-          <div class="stub-value">Westbroek, NL</div>
+          <div class="stub-label">Your travel journey</div>
+          <ul class="journey-list">
+            <li class="journey-step">
+              <span class="journey-marker-slot"><span class="journey-dot"></span></span>
+              <span class="journey-label">Kennismaken</span>
+            </li>
+            <li class="journey-step">
+              <span class="journey-marker-slot"><span class="journey-dot"></span></span>
+              <span class="journey-label">Reisvoorstel</span>
+            </li>
+            <li class="journey-step">
+              <span class="journey-marker-slot"><span class="journey-dot"></span></span>
+              <span class="journey-label">Finetunen</span>
+            </li>
+            <li class="journey-step">
+              <span class="journey-marker-slot">
+                <svg class="journey-plane" viewBox="-10 -10 22 20" fill="currentColor"><path d="M11,0 L3,-2 L3,-9 L0,-3 L-6,-2 L-6,-4 L-9,-1 L-9,1 L-6,4 L-6,2 L0,3 L3,9 L3,2 Z"/></svg>
+              </span>
+              <span class="journey-label">Genieten</span>
+            </li>
+          </ul>
         </div>
         <div class="stamp-badge">ANVR<br>SGR<br>Erkend</div>
       </div>
