@@ -69,8 +69,8 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding-top:18px;
-    padding-bottom:18px;
+    padding-top:22px;
+    padding-bottom:22px;
   }
   .brand{
     font-family:'Fraunces', serif;
@@ -79,23 +79,26 @@
   }
   .brand span{color:var(--teal);}
   .brand-logo{
-    height:56px;
+    height:92px;
     width:auto;
     display:block;
   }
   .nav-links{
     display:flex;
-    gap:32px;
+    align-items:center;
+    gap:38px;
     font-size:0.85rem;
   }
   .nav-links a{
     font-family:'Space Mono', monospace;
     text-transform:uppercase;
-    letter-spacing:0.06em;
-    font-size:0.72rem;
+    letter-spacing:0.065em;
+    font-size:0.88rem;
+    font-weight:700;
     color:var(--ink-soft);
     position:relative;
     padding-bottom:4px;
+    transition:color 0.2s ease;
   }
   .nav-links a:hover{color:var(--teal);}
   .nav-links a::after{
@@ -108,8 +111,13 @@
     transition:width 0.25s ease;
   }
   .nav-links a:hover::after{width:100%;}
+  @media (max-width:900px){
+    .brand-logo{height:76px;}
+  }
   @media (max-width:640px){
     .nav-links{display:none;}
+    nav .wrap{padding-top:16px; padding-bottom:16px;}
+    .brand-logo{height:60px;}
   }
 
   /* ---------- HERO / BOARDING PASS ---------- */
