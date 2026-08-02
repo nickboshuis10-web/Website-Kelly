@@ -111,13 +111,59 @@
     transition:width 0.25s ease;
   }
   .nav-links a:hover::after{width:100%;}
+  .nav-toggle{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    width:32px;
+    height:32px;
+    background:none;
+    border:none;
+    padding:0;
+    cursor:pointer;
+    z-index:60;
+  }
+  .nav-toggle span{
+    display:block;
+    width:100%;
+    height:2px;
+    background:var(--ink);
+    border-radius:1px;
+    transition:transform 0.25s ease, opacity 0.25s ease;
+  }
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
   @media (max-width:900px){
     .brand-logo{height:76px;}
   }
   @media (max-width:640px){
-    .nav-links{display:none;}
-    nav .wrap{padding-top:6px; padding-bottom:6px;}
+    nav .wrap{padding-top:6px; padding-bottom:6px; position:relative;}
     .brand-logo{height:60px;}
+    .nav-toggle{display:flex;}
+    .nav-links{
+      display:flex;
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      flex-direction:column;
+      align-items:stretch;
+      gap:0;
+      background:rgba(233,226,206,0.98);
+      backdrop-filter:blur(6px);
+      border-bottom:1px solid var(--line);
+      max-height:0;
+      overflow:hidden;
+      transition:max-height 0.3s ease;
+    }
+    .nav-links.open{max-height:400px;}
+    .nav-links a{
+      padding:16px 28px;
+      border-top:1px solid var(--line);
+    }
+    .nav-links a::after{display:none;}
   }
 
   /* ---------- HERO / BOARDING PASS ---------- */
@@ -697,8 +743,30 @@
       <a href="media.html">Media</a>
       <a href="contact.html">Contact</a>
     </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu openen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<script>
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var links = document.querySelector('.nav-links');
+    if (!toggle || !links) return;
+    toggle.addEventListener('click', function(){
+      var isOpen = links.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
 
 <header class="hero" style="padding-bottom:0;">
   <div class="wrap">
