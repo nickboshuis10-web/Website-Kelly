@@ -3,22 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Kelly Scherrenberg</title>
+<title>Contact — Reisadviseur Utrecht | Kelly Scherrenberg</title>
+<meta name="description" content="Neem contact op met Kelly, persoonlijk reisadviseur in Utrecht. Vrijblijvend kennismaken via app, mail of telefoon — samen stellen we jouw droomreis samen.">
+<link rel="canonical" href="https://nickboshuis10-web.github.io/Website-Kelly/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kelly Scherrenberg — Personal Touch Travel">
+<meta property="og:title" content="Contact — Reisadviseur Utrecht | Kelly Scherrenberg">
+<meta property="og:description" content="Neem contact op met Kelly, persoonlijk reisadviseur in Utrecht. Vrijblijvend kennismaken via app, mail of telefoon — samen stellen we jouw droomreis samen.">
+<meta property="og:url" content="https://nickboshuis10-web.github.io/Website-Kelly/contact.html">
+<meta property="og:image" content="https://nickboshuis10-web.github.io/Website-Kelly/images/logo.png">
+<meta property="og:locale" content="nl_NL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact — Reisadviseur Utrecht | Kelly Scherrenberg">
+<meta name="twitter:description" content="Neem contact op met Kelly, persoonlijk reisadviseur in Utrecht. Vrijblijvend kennismaken via app, mail of telefoon — samen stellen we jouw droomreis samen.">
+<meta name="twitter:image" content="https://nickboshuis10-web.github.io/Website-Kelly/images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme.css">
 <style>
-:root{
-    --paper:#F7ECE7;
-    --paper-light:#FBF3EF;
-    --card:#FFFFFF;
-    --ink:#2A211D;
-    --ink-soft:#5C4A45;
-    --teal:#B97A6E;
-    --teal-deep:#8C5348;
-    --gold:#C9A227;
-    --coral:#D9A9A0;
-    --line: rgba(42,33,29,0.14);
-  }
 
   *{box-sizing:border-box; margin:0; padding:0;}
 
@@ -36,7 +38,7 @@
   }
 
   h1,h2,h3{
-    font-family:'Fraunces', serif;
+    font-family:'Fredoka', sans-serif;
     font-weight:600;
     letter-spacing:-0.01em;
     color:var(--ink);
@@ -90,10 +92,10 @@
     font-size:0.85rem;
   }
   .nav-links a{
-    font-family:'Space Mono', monospace;
+    font-family:'Bebas Neue', sans-serif;
     text-transform:uppercase;
     letter-spacing:0.065em;
-    font-size:0.88rem;
+    font-size:1.06rem;
     font-weight:700;
     color:var(--ink-soft);
     position:relative;
@@ -172,7 +174,7 @@
   }
   .eyebrow{
     font-size:0.72rem;
-    color:var(--teal-deep);
+    color:var(--teal);
     margin-bottom:18px;
     display:flex;
     align-items:center;
@@ -182,7 +184,7 @@
     content:'';
     width:26px;
     height:1px;
-    background:var(--teal-deep);
+    background:var(--teal);
     display:inline-block;
   }
 
@@ -254,7 +256,7 @@
     transition:transform 0.2s ease, box-shadow 0.2s ease;
   }
   .btn-primary{
-    background:var(--teal);
+    background:#F49B01;
     color:var(--paper-light);
   }
   .btn-primary:hover{
@@ -348,7 +350,7 @@
   .section-num{
     font-family:'Space Mono', monospace;
     font-size:0.75rem;
-    color:var(--ink-soft);
+    color:var(--teal);
   }
 
   /* ---------- ABOUT ---------- */
@@ -631,8 +633,22 @@
     align-items:flex-start;
     gap:14px;
   }
+  .footer-ptt{
+    background:#FFFFFF;
+    border-radius:8px;
+    padding:30px 36px;
+    display:inline-block;
+    line-height:0;
+    margin-bottom:24px;
+    align-self:center;
+  }
+  .footer-ptt img{
+    height:100px;
+    width:auto;
+    display:block;
+  }
   .footer-logo{
-    height:110px;
+    height:150px;
     width:auto;
     filter:brightness(0) invert(1);
     opacity:0.96;
@@ -718,6 +734,47 @@
     .postcard:hover{transform:none;}
   }
 
+  .faq-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    max-width:720px;
+  }
+  .faq-item{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:18px 22px;
+  }
+  .faq-item summary{
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.05rem;
+    color:var(--ink);
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:'+';
+    font-family:'Space Mono', monospace;
+    font-size:1.3rem;
+    color:var(--teal-deep);
+    flex-shrink:0;
+    transition:transform 0.2s ease;
+  }
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{
+    color:var(--ink-soft);
+    font-size:0.95rem;
+    margin-top:12px;
+    max-width:640px;
+  }
+
   a:focus-visible, .btn:focus-visible{
     outline:2px solid var(--teal-deep);
     outline-offset:3px;
@@ -735,7 +792,7 @@
     width:60px;
     height:60px;
     border-radius:50%;
-    background:var(--teal);
+    background:var(--whatsapp);
     color:var(--paper-light);
     display:flex;
     align-items:center;
@@ -800,6 +857,94 @@
     .wa-tooltip{display:none !important;}
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wat doet een persoonlijk reisadviseur precies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Als persoonlijk reisadviseur denk ik met je mee vanaf je eerste reiswens tot en met je terugkomst. Geen anoniem boekingsformulier, maar één vast aanspreekpunt dat jouw wensen, budget en reisstijl kent, ook als er onderweg iets verandert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat kost jouw reisadvies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eigenlijk verrassend weinig. Je betaalt gewoon de normale prijs voor je vakantie, net zoals wanneer je zelf boekt. Voor mijn persoonlijke begeleiding en het regelen van jouw complete reis betaal je slechts €50 per boeking. Daarvoor neem ik je veel zoekwerk uit handen, denk ik met je mee en heb je één vast aanspreekpunt van de eerste reiswens tot na je vakantie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Werk je alleen met reizigers uit Utrecht?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ik ben gevestigd in de regio Utrecht, maar begeleid reizigers door heel Nederland. Het contact verloopt grotendeels via appjes, mail en gesprekken op afstand, dus we hoeven niet naast elkaar te wonen om samen jouw droomreis te plannen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat voor reizen kun je voor mij regelen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Van een stedentrip en wintersport tot een verre droomreis of familiereis: ik stel een maatwerkreis samen die aansluit bij jouw wensen, in plaats van een standaardpakket."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ben je aangesloten bij een erkende reisorganisatie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Ik ben zelfstandig ondernemer en werk via Personal Touch Travel, lid van ANVR (03021) en SGR (3198). Je boekt en betaalt veilig bij Personal Touch Travel."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "url": "https://nickboshuis10-web.github.io/Website-Kelly/contact.html",
+  "about": {
+    "@type": "TravelAgency",
+    "name": "Kelly Scherrenberg — Personal Touch Travel",
+    "email": "kelly.scherrenberg@personaltouchtravel.nl",
+    "telephone": "+31647268845",
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Utrecht"
+      },
+      {
+        "@type": "Country",
+        "name": "Netherlands"
+      }
+    ],
+    "identifier": {
+      "@type": "PropertyValue",
+      "name": "KvK",
+      "value": "27376510"
+    },
+    "memberOf": [
+      {
+        "@type": "Organization",
+        "name": "ANVR",
+        "identifier": "03021"
+      },
+      {
+        "@type": "Organization",
+        "name": "SGR",
+        "identifier": "3198"
+      }
+    ]
+  }
+}
+</script>
 </head>
 <body>
 
@@ -856,9 +1001,10 @@
   <div class="wrap">
     <div class="contact-panel reveal">
       <div>
-        <h2>Laten we plannen</h2>
+        <h2>Laten we kennismaken</h2>
         <p>Vertel me waar je van droomt, dan denk ik met je mee. Een eerste gesprek is altijd vrijblijvend.</p>
         <a href="https://wa.me/31647268845" target="_blank" rel="noopener" class="btn btn-primary">Stuur een appje</a>
+        <p style="margin-top:16px; margin-bottom:0; font-size:0.85rem; color:var(--ink-soft);">Je boekt veilig: ik werk via Personal Touch Travel, aangesloten bij ANVR en SGR. Jouw reisgeld is beschermd.</p>
       </div>
       <ul class="contact-list">
         <li><span class="mono">E-mail</span><a href="mailto:kelly.scherrenberg@personaltouchtravel.nl">kelly.scherrenberg@personaltouchtravel.nl</a></li>
@@ -881,7 +1027,7 @@
       <div>
         <ul class="process-steps-list">
           <li class="process-step">
-            <span class="process-icon">✈️</span>
+            <span class="process-icon">🤝</span>
             <div>
               <h3>Kennismaken</h3>
               <p>We beginnen met een vrijblijvende kennismaking. We bespreken jouw reiswensen, budget en ideeën, zodat ik precies weet wat bij jou past.</p>
@@ -891,25 +1037,57 @@
             <span class="process-icon">🌍</span>
             <div>
               <h3>Persoonlijk reisvoorstel</h3>
-              <p>Op basis van ons gesprek stel ik een reisvoorstel op maat samen. Geen standaardpakket, maar een reis die volledig aansluit bij jouw wensen.</p>
+              <p>Op basis van ons gesprek stel ik een reisvoorstel op maat samen. Deze kan je rustig doornemen en we passen het aan waar nodig. Net zolang totdat alles perfect aansluit op jouw wensen.</p>
             </div>
           </li>
           <li class="process-step">
-            <span class="process-icon">🤝</span>
+            <span class="process-icon">✈️</span>
             <div>
-              <h3>Samen finetunen</h3>
-              <p>We nemen het voorstel samen door en passen het aan waar nodig. Net zolang totdat alles perfect aansluit op jouw droomreis.</p>
+              <h3>Reis boeken</h3>
+              <p>Pas als je helemaal tevreden bent, zet ik het reisvoorstel om in een boeking. Hiervan ontvang je de bevestiging.</p>
             </div>
           </li>
           <li class="process-step">
             <span class="process-icon">☀️</span>
             <div>
               <h3>Genieten</h3>
-              <p>Na jouw akkoord regel ik de boeking en ontvang je jouw reisbescheiden. Daarna hoef jij alleen nog maar af te tellen naar vertrek. Ook tijdens de voorbereiding blijf ik bereikbaar als je nog vragen hebt.</p>
+              <p>Nu hoef je alleen nog maar af te tellen naar vertrek. Ongeveer twee weken voor vertrek ontvang je een pakketje met reisbescheiden en ook tijdens de voorbereiding blijf ik bereikbaar als je nog vragen hebt.</p>
             </div>
           </li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Veelgestelde vragen</h2>
+      <span class="section-num mono">Reisadvies & maatwerk</span>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>Wat doet een persoonlijk reisadviseur precies?</summary>
+        <p>Als persoonlijk reisadviseur denk ik met je mee vanaf je eerste reiswens tot en met je terugkomst. Geen anoniem boekingsformulier, maar één vast aanspreekpunt dat jouw wensen, budget en reisstijl kent, ook als er onderweg iets verandert.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Wat kost jouw reisadvies?</summary>
+        <p>Eigenlijk verrassend weinig. Je betaalt gewoon de normale prijs voor je vakantie, net zoals wanneer je zelf boekt. Voor mijn persoonlijke begeleiding en het regelen van jouw complete reis betaal je slechts €50 per boeking.</p>
+        <p>Daarvoor neem ik je veel zoekwerk uit handen, denk ik met je mee en heb je één vast aanspreekpunt van de eerste reiswens tot na je vakantie.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Werk je alleen met reizigers uit Utrecht?</summary>
+        <p>Ik ben gevestigd in de regio Utrecht, maar begeleid reizigers door heel Nederland. Het contact verloopt grotendeels via appjes, mail en gesprekken op afstand, dus we hoeven niet naast elkaar te wonen om samen jouw droomreis te plannen.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Wat voor reizen kun je voor mij regelen?</summary>
+        <p>Van een stedentrip en wintersport tot een verre droomreis of familiereis: ik stel een maatwerkreis samen die aansluit bij jouw wensen, in plaats van een standaardpakket.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Ben je aangesloten bij een erkende reisorganisatie?</summary>
+        <p>Ja. Ik ben zelfstandig ondernemer en werk via Personal Touch Travel, lid van ANVR (03021) en SGR (3198). Je boekt en betaalt veilig bij Personal Touch Travel.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -934,7 +1112,7 @@
       <p class="footer-tagline">Persoonlijk Reisadviseur</p>
     </div>
     <div class="footer-col footer-legal">
-      <p>Ik ben zelfstandig ondernemer en aangesloten bij Personal Touch Travel.</p>
+      <div class="footer-ptt"><img src="images/personal-touch-travel-logo.png" alt="Personal Touch Travel"></div>
       <p>Alle boekingen worden ondergebracht bij Personal Touch Travel, lid van ANVR (03021) en SGR (3198).</p>
       <p>Je boekt en betaalt bij Personal Touch Travel (KvK 27376510).</p>
     </div>

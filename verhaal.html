@@ -4,21 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title id="page-title">Reisverhaal — Kelly Scherrenberg</title>
+<meta name="description" id="page-description" content="Lees de reisverhalen van Kelly Scherrenberg, persoonlijk reisadviseur — persoonlijke ervaringen en tips voor jouw volgende reis.">
+<link rel="canonical" id="page-canonical" href="https://nickboshuis10-web.github.io/Website-Kelly/reisverhalen.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Kelly Scherrenberg — Personal Touch Travel">
+<meta property="og:title" id="og-title" content="Reisverhaal — Kelly Scherrenberg">
+<meta property="og:description" id="og-description" content="Lees de reisverhalen van Kelly Scherrenberg, persoonlijk reisadviseur.">
+<meta property="og:url" id="og-url" content="https://nickboshuis10-web.github.io/Website-Kelly/reisverhalen.html">
+<meta property="og:image" id="og-image" content="https://nickboshuis10-web.github.io/Website-Kelly/images/logo.png">
+<meta property="og:locale" content="nl_NL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" id="twitter-title" content="Reisverhaal — Kelly Scherrenberg">
+<meta name="twitter:description" id="twitter-description" content="Lees de reisverhalen van Kelly Scherrenberg, persoonlijk reisadviseur.">
+<meta name="twitter:image" id="twitter-image" content="https://nickboshuis10-web.github.io/Website-Kelly/images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme.css">
 <style>
-:root{
-    --paper:#F7ECE7;
-    --paper-light:#FBF3EF;
-    --card:#FFFFFF;
-    --ink:#2A211D;
-    --ink-soft:#5C4A45;
-    --teal:#B97A6E;
-    --teal-deep:#8C5348;
-    --gold:#C9A227;
-    --coral:#D9A9A0;
-    --line: rgba(42,33,29,0.14);
-  }
 
   *{box-sizing:border-box; margin:0; padding:0;}
 
@@ -90,10 +92,10 @@
     font-size:0.85rem;
   }
   .nav-links a{
-    font-family:'Space Mono', monospace;
+    font-family:'Bebas Neue', sans-serif;
     text-transform:uppercase;
     letter-spacing:0.065em;
-    font-size:0.88rem;
+    font-size:1.06rem;
     font-weight:700;
     color:var(--ink-soft);
     position:relative;
@@ -561,8 +563,22 @@
     align-items:flex-start;
     gap:14px;
   }
+  .footer-ptt{
+    background:#FFFFFF;
+    border-radius:8px;
+    padding:30px 36px;
+    display:inline-block;
+    line-height:0;
+    margin-bottom:24px;
+    align-self:center;
+  }
+  .footer-ptt img{
+    height:100px;
+    width:auto;
+    display:block;
+  }
   .footer-logo{
-    height:110px;
+    height:150px;
     width:auto;
     filter:brightness(0) invert(1);
     opacity:0.96;
@@ -804,7 +820,7 @@
     width:60px;
     height:60px;
     border-radius:50%;
-    background:var(--teal);
+    background:var(--whatsapp);
     color:var(--paper-light);
     display:flex;
     align-items:center;
@@ -912,6 +928,7 @@
     <a class="back-link" href="reisverhalen.html">&larr; Alle reisverhalen</a>
     <div class="eyebrow mono" style="margin-top:22px;" id="story-region">&nbsp;</div>
     <h1 style="font-size:clamp(2rem, 4vw, 3rem); max-width:720px;" id="story-title">&nbsp;</h1>
+    <p style="color:var(--ink-soft); font-size:0.9rem; margin-top:10px;">Door <a href="over-kelly.html" style="text-decoration:underline;">Kelly Scherrenberg</a>, persoonlijk reisadviseur</p>
   </div>
 </header>
 
@@ -923,6 +940,10 @@
     <div class="story-tips" id="story-tips" style="display:none;">
       <span class="mono">Tips</span>
       <ul id="story-tips-list"></ul>
+    </div>
+    <div class="reveal" style="margin-top:40px; padding-top:32px; border-top:1px solid var(--line);">
+      <p style="color:var(--ink-soft); margin-bottom:16px;">Zelf toe aan een reis zoals deze?</p>
+      <a href="contact.html#contact" class="btn btn-primary">Plan samen met Kelly jouw volgende reis</a>
     </div>
   </div>
 </section>
@@ -941,7 +962,7 @@
       <p class="footer-tagline">Persoonlijk Reisadviseur</p>
     </div>
     <div class="footer-col footer-legal">
-      <p>Ik ben zelfstandig ondernemer en aangesloten bij Personal Touch Travel.</p>
+      <div class="footer-ptt"><img src="images/personal-touch-travel-logo.png" alt="Personal Touch Travel"></div>
       <p>Alle boekingen worden ondergebracht bij Personal Touch Travel, lid van ANVR (03021) en SGR (3198).</p>
       <p>Je boekt en betaalt bij Personal Touch Travel (KvK 27376510).</p>
     </div>
@@ -984,7 +1005,37 @@
   const verhaal = VERHALEN.find(v => v.slug === slug);
 
   if (verhaal) {
-    document.getElementById('page-title').textContent = verhaal.title + ' — Kelly Scherrenberg';
+    const baseUrl = 'https://nickboshuis10-web.github.io/Website-Kelly/';
+    const pageUrl = baseUrl + 'verhaal.html?slug=' + encodeURIComponent(verhaal.slug);
+    const pageDescription = verhaal.excerpt || (verhaal.title + ' — een reisverhaal van Kelly Scherrenberg, persoonlijk reisadviseur.');
+    const pageImage = verhaal.image ? baseUrl + verhaal.image : baseUrl + 'images/logo.png';
+    const pageTitle = verhaal.title + ' — Kelly Scherrenberg';
+
+    document.getElementById('page-title').textContent = pageTitle;
+    document.getElementById('page-description').setAttribute('content', pageDescription);
+    document.getElementById('page-canonical').setAttribute('href', pageUrl);
+    document.getElementById('og-title').setAttribute('content', pageTitle);
+    document.getElementById('og-description').setAttribute('content', pageDescription);
+    document.getElementById('og-url').setAttribute('content', pageUrl);
+    document.getElementById('og-image').setAttribute('content', pageImage);
+    document.getElementById('twitter-title').setAttribute('content', pageTitle);
+    document.getElementById('twitter-description').setAttribute('content', pageDescription);
+    document.getElementById('twitter-image').setAttribute('content', pageImage);
+
+    const ldJson = document.createElement('script');
+    ldJson.type = 'application/ld+json';
+    ldJson.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: verhaal.title,
+      description: pageDescription,
+      image: pageImage,
+      author: { '@type': 'Person', name: 'Kelly Scherrenberg' },
+      publisher: { '@type': 'Organization', name: 'Personal Touch Travel' },
+      mainEntityOfPage: pageUrl
+    });
+    document.head.appendChild(ldJson);
+
     document.getElementById('story-region').textContent = verhaal.region + (verhaal.date ? ' · ' + verhaal.date : '');
     document.getElementById('story-title').textContent = verhaal.title;
 
@@ -1004,8 +1055,12 @@
       const lightbox = document.getElementById('lightbox');
       const trigger = document.getElementById('gallery-trigger');
 
-      document.getElementById('lightbox-grid').innerHTML = verhaal.gallery.map(src => `<img src="${src}" alt="${verhaal.title}" loading="lazy">`).join('');
-      trigger.textContent = `Bekijk alle foto's (${verhaal.gallery.length + (verhaal.image ? 1 : 0)}) →`;
+      const galleryImages = verhaal.image
+        ? [verhaal.image, ...verhaal.gallery.filter(src => src !== verhaal.image)]
+        : verhaal.gallery.slice();
+
+      document.getElementById('lightbox-grid').innerHTML = galleryImages.map(src => `<img src="${src}" alt="${verhaal.title}" loading="lazy">`).join('');
+      trigger.textContent = `Bekijk alle foto's (${galleryImages.length}) →`;
       trigger.style.display = '';
       cover.classList.add('has-gallery');
 

@@ -62,7 +62,7 @@ const VERHALEN = [
     region: 'Marokko · Marrakech',
     stamp: 'MA',
     title: 'Marrakech met vriendinnen: 4 dagen vol kleur, cultuur en gezelligheid',
-    excerpt: "Marrakech is dé bestemming voor een weekendje weg met vriendinnen — kleurrijke straatjes, sfeervolle riads en bijzondere activiteiten in een paar dagen tijd.",
+    excerpt: "Marrakech is dé bestemming voor een weekendje weg met vriendinnen, denk aan kleurrijke straatjes, sfeervolle riads en bijzondere activiteiten in een paar dagen tijd.",
     image: 'images/verhalen/marrakech-1.jpg',
     gallery: [
       'images/verhalen/marrakech-2.jpg',
@@ -108,11 +108,11 @@ const VERHALEN = [
     region: 'Mauritius · Op maat',
     stamp: 'MU',
     title: 'Een reis op maat, van A tot Z',
-    excerpt: "Voorbeeldverhaal — plek voor een persoonlijk verslag van hoe een reis tot stand kwam, van wens tot boeking.",
+    excerpt: "Voorbeeldverhaal, een plek voor een persoonlijk verslag van hoe een reis tot stand kwam, van wens tot boeking.",
     image: '',
     date: '',
     content: [
-      "Voorbeeldverhaal — plek voor een persoonlijk verslag van hoe een reis tot stand kwam, van wens tot boeking."
+      "Voorbeeldverhaal, een plek voor een persoonlijk verslag van hoe een reis tot stand kwam, van wens tot boeking."
     ]
   },
   {
@@ -120,11 +120,11 @@ const VERHALEN = [
     region: 'Nieuw-Zeeland · Rondreis',
     stamp: 'NZ',
     title: 'Twee maanden onderweg',
-    excerpt: "Voorbeeldverhaal — ruimte voor een langer reisverslag, eventueel met een fotoserie of korte video.",
+    excerpt: "Voorbeeldverhaal, ruimte voor een langer reisverslag, eventueel met een fotoserie of korte video.",
     image: '',
     date: '',
     content: [
-      "Voorbeeldverhaal — ruimte voor een langer reisverslag, eventueel met een fotoserie of korte video."
+      "Voorbeeldverhaal, ruimte voor een langer reisverslag, eventueel met een fotoserie of korte video."
     ]
   },
   {
@@ -132,11 +132,11 @@ const VERHALEN = [
     region: 'Zuid-Afrika · Safari',
     stamp: 'ZA',
     title: 'Op safari langs de Kaap',
-    excerpt: "Voorbeeldverhaal — plek voor een verslag van een rondreis met safari-momenten.",
+    excerpt: "Voorbeeldverhaal, een plek voor een verslag van een rondreis met safari-momenten.",
     image: '',
     date: '',
     content: [
-      "Voorbeeldverhaal — plek voor een verslag van een rondreis met safari-momenten."
+      "Voorbeeldverhaal, een plek voor een verslag van een rondreis met safari-momenten."
     ]
   },
   {
@@ -144,11 +144,11 @@ const VERHALEN = [
     region: 'Italië · Amalfikust',
     stamp: 'IT',
     title: 'Acht dagen langs de kust',
-    excerpt: "Voorbeeldverhaal — een route van Napels tot Positano, precies binnen de tijd die er was.",
+    excerpt: "Voorbeeldverhaal, een route van Napels tot Positano, precies binnen de tijd die er was.",
     image: '',
     date: '',
     content: [
-      "Voorbeeldverhaal — een route van Napels tot Positano, precies binnen de tijd die er was."
+      "Voorbeeldverhaal, een route van Napels tot Positano, precies binnen de tijd die er was."
     ]
   },
   {
@@ -156,11 +156,11 @@ const VERHALEN = [
     region: 'Noorwegen · Roadtrip',
     stamp: 'NO',
     title: 'Op de weg door de fjorden',
-    excerpt: "Voorbeeldverhaal — ruimte voor een roadtripverslag met foto's van onderweg.",
+    excerpt: "Voorbeeldverhaal, ruimte voor een roadtripverslag met foto's van onderweg.",
     image: '',
     date: '',
     content: [
-      "Voorbeeldverhaal — ruimte voor een roadtripverslag met foto's van onderweg."
+      "Voorbeeldverhaal, ruimte voor een roadtripverslag met foto's van onderweg."
     ]
   }
 ];

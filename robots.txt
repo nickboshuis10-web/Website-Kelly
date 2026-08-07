@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nickboshuis10-web.github.io/Website-Kelly/sitemap.xml

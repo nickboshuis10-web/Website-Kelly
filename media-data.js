@@ -44,7 +44,7 @@ const MEDIA = [
   },
   {
     image: 'images/verhalen/marrakech-3.jpg',
-    quote: "Habibi — de sfeer van de medina in één woord.",
+    quote: "Habibi, de sfeer van de medina in één woord.",
     name: 'Marit'
   },
   {
